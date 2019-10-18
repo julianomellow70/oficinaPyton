@@ -1,0 +1,90 @@
+pip3 install virtual even
+q
+//criar um ambiente virtual para instalação de pacotes]
+virtual venv
+
+NLTK -> Natural Language Toolkit
+
+source venv/bin/activate
+
+pip3 install nltk
+
+//inicia o terminal python3
+python3
+
+//biblioteca nltk
+>>> import nltk
+>>> nltk.download()
+
+d
+
+book
+
+//importar livros
+from nltk.book import *
+
+//metodo para encontrar a palavra em um contexto
+>>> text1.concordance("monstrous")
+
+//palavras em um contexto
+>>> text1.similar("monstrous")
+
+//instalando pacote
+pip3 install matplotlib
+
+//instalando python3-tk
+sudo apt-get install python3-tk
+
+//estudar a dispersão da palavra no texto
+>>> text3.dispersion_plot(["God","Adam"])
+
+//importando o texto de machado de assis
+>>> from nltk.corpus import machado
+>>> from nltk.text import Text
+>>> machado.fileids()
+
+//jogando texto em uma variavel
+>>>bras = Text(machado.words('romance/marm05.txt'))
+
+//frequencia de vezes que uma palavra aparece
+>>> nltk.FreqDist(bras)
+
+//informando stopwords
+>>> stopwords = nltk.corpus.stopwords.words('portuguese')
+>>> stopwords[:10]
+
+//incluindo stopwords
+>>>stopwords.append('.')
+
+//removendo stopwords
+>>>texto = [palavra for palavra in bras if palavra not in stopwords and palavra.isalnum()]
+
+//removendo stopwords contudo passa em letras minusculas
+>>>texto = [palavra for palavra in bras if palavra.lower() not in stopwords and palavra.isalnum()]
+>>> nltk.FreqDist(texto)
+
+//gerando um texto aleatorio, com palavras em contexto
+>>> bras.generate()
+
+//listando todos os bigramas do texto
+>>>list(bigrams(bras))
+>>> list(bigrams("Eu roubei muitos doces".split()))
+
+//listando os bigramas
+>>> nltk.FreqDist(list(bigrams(texto)))
+
+//stemmer
+>>> stemmer = nltk.stem.RSLPStemmer()
+
+texto = [stemmer.stem(palavra) for palavra in texto]
+
+//juntar as palavras
+ tokens = nltk.word_tokenize("Memórias póstunas de Brás Cubas")
+
+
+>>> tokenizer = nltk.tokenize.RegexpTokenizer("\w+")
+>>> tokenizer.tokenize("É a vida 1000!")
+['É', 'a', 'vida', '1000']
+>>> tokenizer.tokenize("É a vida 1000, não é?")
+['É', 'a', 'vida', '1000', 'não', 'é']
+
